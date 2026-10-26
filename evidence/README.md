@@ -84,3 +84,32 @@ This confirms that Kali Linux has an IPv4 address on the configured network. How
 **Result:** The network interface is up, and an IPv4 address has been assigned.
 
 **Next step:** Inspect the routing table to identify the configured network routes and determine whether a default gateway exists.
+
+
+## Evidence 05 — Kali Linux Routing Table
+
+**Filename:** `05-kali-routing-table.png`
+
+**Purpose:** To inspect the routing table and identify the default gateway configured for the Kali Linux virtual machine.
+
+**Command used:**
+
+`ip route`
+
+**Observed results:**
+
+- **Default gateway:** `10.0.0.1`
+- **Network interface:** `eth0`
+- **Kali IPv4 address:** `10.0.0.3`
+- **Local subnet:** `10.0.0.0/24`
+- **Route source:** DHCP for the default route
+
+**Technical explanation:**
+
+The `ip route` command displays the routes Kali Linux uses to direct network traffic. The default route, shown as `default via 10.0.0.1 dev eth0`, indicates that traffic without a more specific matching route is directed to the gateway at `10.0.0.1` through `eth0`.
+
+The second route shows that the `10.0.0.0/24` subnet is directly connected through the same interface.
+
+**Result:** A default route and a directly connected subnet route are present.
+
+**Next step:** Test whether Kali can communicate with its configured default gateway.
