@@ -113,3 +113,40 @@ The second route shows that the `10.0.0.0/24` subnet is directly connected throu
 **Result:** A default route and a directly connected subnet route are present.
 
 **Next step:** Test whether Kali can communicate with its configured default gateway.
+
+
+Evidence 06 — Default Gateway Connectivity Test
+
+Purpose: To test whether Kali Linux can communicate with its configured default gateway.
+
+Command used:
+
+ping -c 4 10.0.0.1
+
+Observed results:
+
+Destination gateway: 10.0.0.1
+
+Packets transmitted: 4
+
+Packets received: 4
+
+Packet loss: 0%
+
+Minimum round-trip time: 0.576 ms
+
+Average round-trip time: 1.747 ms
+
+Maximum round-trip time: 3.966 ms
+
+Technical explanation:
+
+The ping command uses Internet Control Message Protocol (ICMP) echo requests to test communication with another network device. The -c 4 option limits the test to four requests.
+
+All four requests received replies from 10.0.0.1, with no packet loss. This confirms successful communication between Kali Linux and its configured gateway during this test.
+
+Result: Gateway connectivity verified, with 0% packet loss during the test.
+
+Limitation: This test does not independently confirm internet access or DNS resolution.
+
+Next step: Test external network connectivity separately.
