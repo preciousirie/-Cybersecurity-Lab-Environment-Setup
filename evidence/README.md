@@ -24,8 +24,6 @@ The Kali Linux desktop is visible inside the running virtual machine.
 
 ## Evidence 02 — VirtualBox Host-Only Network Configuration
 
-**Filename:** `02-host-only-network-configuration.png`
-
 **Purpose:** To document the configuration of a VirtualBox Host-Only Network for the cybersecurity lab environment.
 
 **Network requirement:** `10.0.0.0/24`
@@ -44,8 +42,6 @@ The `10.0.0.0/24` notation identifies a network with the subnet mask `255.255.25
 
 ## Evidence 03 — VirtualBox NAT Network Configuration
 
-**Filename:** `03-kali-nat-network-configuration.png`
-
 **Purpose:** To document the network mode assigned to the Kali Linux virtual machine in Oracle VirtualBox.
 
 **Configuration:** The virtual machine's network adapter is attached to a NAT Network.
@@ -57,8 +53,6 @@ The `10.0.0.0/24` notation identifies a network with the subnet mask `255.255.25
 
 
 ## Evidence 04 — Kali Linux IP Address Verification
-
-**Filename:** `04-kali-ip-address.png`
 
 **Purpose:** To verify the IP address assigned to the Kali Linux virtual machine after configuring its network adapter in VirtualBox.
 
@@ -87,8 +81,6 @@ This confirms that Kali Linux has an IPv4 address on the configured network. How
 
 
 ## Evidence 05 — Kali Linux Routing Table
-
-**Filename:** `05-kali-routing-table.png`
 
 **Purpose:** To inspect the routing table and identify the default gateway configured for the Kali Linux virtual machine.
 
@@ -150,3 +142,42 @@ Result: Gateway connectivity verified, with 0% packet loss during the test.
 Limitation: This test does not independently confirm internet access or DNS resolution.
 
 Next step: Test external network connectivity separately.
+
+
+Evidence 07 — DNS Resolution and External Connectivity Test
+
+Purpose: To test domain name resolution and connectivity to an external server from Kali Linux.
+
+Command used:
+
+ping -c 4 google.com
+
+Observed results:
+
+Domain tested: google.com
+
+Resolved IPv4 address: 142.250.140.101
+
+Packets transmitted: 4
+
+Packets received: 4
+
+Packet loss: 0%
+
+Minimum round-trip time: 130.323 ms
+
+Average round-trip time: 165.100 ms
+
+Maximum round-trip time: 214.894 ms
+
+Technical explanation:
+
+The ping command tested connectivity to google.com. Kali Linux successfully resolved the domain name to 142.250.140.101 and received replies to all four ICMP echo requests.
+
+The successful name resolution demonstrates that DNS was functioning for this request. The replies confirm that the external destination was reachable using ICMP during the test.
+
+Result: DNS resolution and external connectivity verified for this test, with 0% packet loss.
+
+Limitation: This test does not verify access to every website or confirm that all network services are functioning.
+
+Next step: Review the collected evidence and summarize the network configuration and connectivity results.
