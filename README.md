@@ -19,7 +19,7 @@ My objective is to understand how a cybersecurity lab environment is prepared, h
 - Document completed activities using genuine technical evidence.
 - Develop practical troubleshooting and technical reporting skills.
 
-## 3. Tools and Technologies
+## 3. Tools and Purposes
 
 | Tool | Purpose |
 |---|---|
