@@ -62,8 +62,7 @@ Kali Linux ran inside VirtualBox with its active network adapter configured to *
 
 Screenshots and explanations are available in the project evidence folder.
 
-**[📂 View Technical Evidence](evidence/)**
-
+[**📂 View Technical Evidence**](https://github.com/preciousirie/-Cybersecurity-Lab-Environment-Setup/tree/main/evidence)
 Evidence includes the Kali Linux desktop, VirtualBox network settings, IP address, routing table, and connectivity tests.
 
 ## 📚 7. Key Learning Outcomes
