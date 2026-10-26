@@ -88,7 +88,6 @@ Official resources for the software used in this project:
 
 - **Oracle VirtualBox:** [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - **Kali Linux:** [Download Kali Linux](https://www.kali.org/get-kali/)
-- **7-Zip:** [Download 7-Zip](https://www.7-zip.org/) — for extracting `.7z` archives when needed.
 
 ## 🏁 10. Conclusion and Next Steps
 
