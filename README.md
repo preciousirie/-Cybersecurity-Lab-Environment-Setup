@@ -1,120 +1,104 @@
-# Cybersecurity Lab Environment Setup
+# 🛡️ Cybersecurity Lab Environment Setup
 
 **Network Walks Cybersecurity Internship | Week 1**
 
-## 1. Project Overview
+## 📌 1. Project Overview
 
-This project documents my hands-on experience setting up and validating a Kali Linux virtual machine as part of my Network Walks Cybersecurity Internship.
+This project documents the setup and network verification of a Kali Linux virtual machine using Oracle VirtualBox.
 
-The project focuses on virtual machine configuration, Linux networking, connectivity testing, troubleshooting, and technical evidence collection.
+It demonstrates practical skills in **virtualization, Linux networking, connectivity testing, troubleshooting, and technical documentation.**
 
-My objective is to understand how a cybersecurity lab environment is prepared, how network connectivity is verified, and how technical activities are documented professionally.
+## 🎯 2. Project Objectives
 
-## 2. Project Objectives
+- 🖥️ Access Kali Linux through VirtualBox.
+- 🌐 Understand virtual machine network configuration.
+- 🔎 Identify network interfaces, IP addresses, and gateways.
+- 📡 Test network and DNS connectivity.
+- 📸 Capture genuine technical evidence.
+- 📝 Document findings professionally.
 
-- Set up and access a Kali Linux virtual machine using VirtualBox.
-- Understand virtual machine network configuration.
-- Identify the virtual machine's network interface, IP address, and default gateway.
-- Test gateway connectivity, external connectivity, and DNS resolution.
-- Document completed activities using genuine technical evidence.
-- Develop practical troubleshooting and technical reporting skills.
-
-## 3. Tools and Purposes
+## 🧰 3. Tools and Technologies
 
 | Tool | Purpose |
 |---|---|
 | Windows 11 | Host operating system |
-| Oracle VirtualBox | Virtualization platform |
-| Kali Linux | Linux-based cybersecurity lab environment |
-| Linux networking commands | Network inspection and connectivity testing |
-| GitHub | Project documentation and version control |
+| Oracle VirtualBox | Runs the virtual machine |
+| Kali Linux | Cybersecurity lab environment |
+| Linux commands | Network inspection and testing |
+| GitHub | Documentation and version control |
 
-## 4. Virtual Machine and Network Configuration
+## 🌐 4. Virtual Machine and Network Configuration
 
-Kali Linux was run inside Oracle VirtualBox. The virtual machine's active network adapter was configured to use a NAT Network.
+Kali Linux ran inside VirtualBox with its active network adapter configured to **NAT Network**. The Host-Only Network settings were documented separately.
 
-The VirtualBox Host-Only Network configuration was also documented separately as part of the lab setup process.
+| Network detail | Observed value |
+|---|---|
+| Interface | `eth0` |
+| Status | `UP` |
+| IPv4 address | `10.0.0.3` |
+| Subnet prefix | `/24` |
+| Default gateway | `10.0.0.1` |
+| Subnet mask | `255.255.255.0` |
 
-The following network details were observed inside Kali Linux during verification:
+*These values reflect the configuration observed during testing.*
 
-- **Network interface:** `eth0`
-- **Interface status:** `UP`
-- **IPv4 address:** `10.0.0.3`
-- **Subnet prefix:** `/24`
-- **Default gateway:** `10.0.0.1`
+## 🔬 5. Network Verification Results
 
-The `/24` prefix corresponds to the subnet mask `255.255.255.0`.
-
-These values represent the configuration observed during testing and may differ in other virtual machine environments.
-
-## 5. Network Verification and Connectivity Testing
-
-Several Linux networking commands were used to inspect the network configuration and test connectivity.
-
-| Test | Command | Observed result |
+| Test | Command | Result |
 |---|---|---|
-| Network interface and IP address | `ip -br addr` | `eth0` was UP with `10.0.0.3/24` |
-| Routing table | `ip route` | Default gateway identified as `10.0.0.1` |
-| Gateway connectivity | `ping -c 4 10.0.0.1` | 4 packets received; 0% packet loss |
-| DNS resolution and external connectivity | `ping -c 4 google.com` | Domain resolved to `142.250.140.101`; 4 packets received; 0% packet loss |
+| Interface and IP | `ip -br addr` | `eth0` was UP |
+| Routing table | `ip route` | Default gateway: `10.0.0.1` |
+| Gateway connectivity | `ping -c 4 10.0.0.1` | 4 received; 0% packet loss |
+| DNS and external connectivity | `ping -c 4 google.com` | Domain resolved; 4 received; 0% packet loss |
 
-### Interpretation of Results
+### ✅ What the Results Mean
 
-The routing table showed a default route through `10.0.0.1`. The gateway ping test confirmed communication with that gateway during testing.
+- The interface had an assigned IPv4 address.
+- The routing table identified a default gateway.
+- The gateway responded to connectivity tests.
+- DNS resolution and external ICMP communication succeeded during testing.
 
-The `google.com` test confirmed that DNS resolution succeeded for the domain and that the resolved destination returned all four ICMP replies.
+## 📸 6. Technical Evidence
 
-Together, these results demonstrated that the virtual machine had working gateway connectivity, DNS resolution, and external ICMP connectivity during the tests.
+Screenshots and explanations are available in the project evidence folder.
 
-## 6. Troubleshooting and Learning
+**[📂 View Technical Evidence](evidence/)**
 
-This exercise provided practical experience in:
+Evidence includes the Kali Linux desktop, VirtualBox network settings, IP address, routing table, and connectivity tests.
 
-- Inspecting Linux network interfaces.
-- Reading IPv4 addresses and subnet prefixes.
-- Identifying a default gateway from the routing table.
-- Testing connectivity with ICMP ping requests.
-- Interpreting packet loss and response times.
-- Distinguishing DNS resolution from basic IP connectivity.
-- Recording test results without assuming success before verification.
+## 📚 7. Key Learning Outcomes
 
-## 7. Technical Evidence
+Through this exercise, I practised:
 
-Screenshots and supporting explanations are maintained in the repository's evidence folder.
+- 🖥️ Virtual machine networking.
+- 🌐 IPv4 addressing and subnet masks.
+- 🧭 Routing tables and default gateways.
+- 📡 Connectivity testing and DNS resolution.
+- 📝 Evidence-based technical reporting.
 
-The evidence covers the Kali Linux desktop, VirtualBox network configuration, IP address verification, routing information, gateway connectivity, and the external connectivity test.
+## ⚠️ 8. Limitations
 
-**Evidence repository:** [View project evidence](evidence/)
+These results represent the network state during testing. Successful ping responses do not guarantee that every website, port, or network service is reachable.
 
-Each evidence item should correspond to an actual configuration step or completed test, with filenames and explanations matching the recorded results.
+**Note:** NAT Network and Host-Only are separate VirtualBox networking modes; the documented Host-Only settings should not be confused with the VM’s active NAT Network adapter.
 
-## 8. Learning Outcomes
+## 🔗 9. Tools and Resources
 
-Through this exercise, I developed a better understanding of:
+Official resources for the software used in this project:
 
-- Virtualization and virtual machine networking.
-- Basic Linux networking commands.
-- IPv4 addressing, subnet prefixes, and default gateways.
-- Routing tables and network connectivity testing.
-- DNS resolution and external ICMP connectivity.
-- Evidence-based technical documentation using GitHub.
+- **Oracle VirtualBox:** [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- **Kali Linux:** [Download Kali Linux](https://www.kali.org/get-kali/)
+- **7-Zip:** [Download 7-Zip](https://www.7-zip.org/) — for extracting `.7z` archives when needed.
 
-## 9. Limitations
+## 🏁 10. Conclusion and Next Steps
 
-These tests reflect the network state at the time they were performed. Successful ping responses do not establish that every website, port, protocol, or network service is reachable.
+This project established a foundation in **virtualization, Linux networking, and evidence-based documentation**.
 
-The Host-Only Network configuration and the active NAT Network adapter represent different VirtualBox networking modes. They should be understood as separate configuration details rather than treated as the same active connection.
-
-## 10. Conclusion and Next Steps
-
-Setting up and validating the Kali Linux virtual machine established a foundation for my practical cybersecurity learning journey.
-
-By inspecting network interfaces, reviewing routing information, and testing connectivity, I gained hands-on experience with essential networking concepts.
-
-The next stages of my development will build on these fundamentals through further hands-on cybersecurity exercises, troubleshooting, and structured technical documentation.
+Next, I will build on these skills through further hands-on cybersecurity exercises and structured lab reporting.
 
 ---
 
 **Project:** Cybersecurity Lab Environment Setup  
 **Programme:** Network Walks Cybersecurity Internship  
-**Week:** 1
+**Week:** 1  
+**Platform:** GitHub
