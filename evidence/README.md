@@ -41,6 +41,7 @@ The `10.0.0.0/24` notation identifies a network with the subnet mask `255.255.25
 **Note:** The actual IP address assigned to Kali Linux and the connectivity between network devices must be verified separately.
 
 
+
 ## Evidence 03 — VirtualBox NAT Network Configuration
 
 **Filename:** `03-kali-nat-network-configuration.png`
@@ -52,3 +53,34 @@ The `10.0.0.0/24` notation identifies a network with the subnet mask `255.255.25
 **Technical significance:** A NAT Network can allow connected virtual machines to communicate with external networks through Network Address Translation (NAT). Actual connectivity depends on the network configuration and must be tested separately.
 
 **Next step:** Verify Kali Linux's assigned IP address and network interface from inside the virtual machine.
+
+
+
+## Evidence 04 — Kali Linux IP Address Verification
+
+**Filename:** `04-kali-ip-address.png`
+
+**Purpose:** To verify the IP address assigned to the Kali Linux virtual machine after configuring its network adapter in VirtualBox.
+
+**Command used:**
+
+`ip -br addr`
+
+**Observed results:**
+
+- **Loopback interface:** `lo`
+- **Loopback IPv4 address:** `127.0.0.1/8`
+- **Network interface:** `eth0`
+- **Interface status:** `UP`
+- **Assigned IPv4 address:** `10.0.0.3/24`
+- **Subnet mask:** `255.255.255.0`
+
+**Technical explanation:**
+
+The `ip -br addr` command displays network interfaces and their assigned addresses in a brief format. The output shows that the `eth0` interface is enabled and has been assigned the IPv4 address `10.0.0.3` within the `10.0.0.0/24` subnet.
+
+This confirms that Kali Linux has an IPv4 address on the configured network. However, this result alone does not confirm successful communication with the gateway or access to the internet.
+
+**Result:** The network interface is up, and an IPv4 address has been assigned.
+
+**Next step:** Inspect the routing table to identify the configured network routes and determine whether a default gateway exists.
